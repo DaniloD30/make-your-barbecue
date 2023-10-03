@@ -1,0 +1,96 @@
+.container {
+  display: flex;
+  background-color: #ffd836;
+  min-height: 100vh;
+  position: relative;
+}
+
+.containerName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 10vh;
+  position: absolute;
+  width: 100%;
+  margin-top: 10%;
+}
+
+.name {
+  color: #000;
+  font-family: Raleway;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  margin-top: 30%;
+}
+
+.inputLoginAndPass {
+  display: flex;
+  flex-direction: column;
+}
+
+.labelInput {
+  color: rgba(0, 0, 0, 0.8);
+  font-family: Raleway;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.inputStyle {
+  width: 282px;
+  height: 50px;
+  flex-shrink: 0;
+  border-radius: 2px;
+  background: #fff;
+  border-color: rgba(0, 0, 0, 0.06);
+  box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.06);
+  padding: 10px;
+}
+
+.inputStyle::placeholder {
+  color: rgba(0, 0, 0, 0.8);
+  font-family: Raleway;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.containerButton {
+  margin-top: 30px;
+}
+
+.buttonLogin {
+  width: 282px;
+  height: 50px;
+  flex-shrink: 0;
+  border-radius: 18px;
+  background: #000;
+  box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.06);
+  color: #fff;
+  font-family: Raleway;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s; 
+}
+
+.buttonLogin:hover {
+  background-color: rgba(128, 128, 128, 0.3);
+  color: black;
+}
