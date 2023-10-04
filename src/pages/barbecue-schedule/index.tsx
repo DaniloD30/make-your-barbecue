@@ -16,12 +16,18 @@ export default function BarbecueSchedule() {
         <div className={styles.containerName}>
           <div className={styles.name}>Agenda de Churras</div>
           <div className={styles.card}>
-            <Card />
-            <Card />
-            <Card /> 
-            <Card />
-            <Card />
             <CardAddBarbecue />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+
+            <Card />
+            <Card />
+            <Card />
           </div>
         </div>
       </div>
