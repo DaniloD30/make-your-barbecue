@@ -1,26 +1,13 @@
 import Image from "next/image";
 import Icon from "../../../assets/icon_bbq.png";
 import Ellipse from "../../../assets/Ellipse.png";
+import styles from "./CardAddBarbecue.module.css";
+
 export default function CardAddBarbecue() {
   return (
     <>
-      <div
-        style={{
-          height: "192px",
-          width: "282px",
-          borderRadius: "2px",
-          background: "#F1F1F1",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            position: "relative",
-            height: "80%",
-          }}
-        >
+      <div className={styles.container}>
+        <div className={styles.containerIcon}>
           <div>
             <Image src={Ellipse} alt="ellipse" />
           </div>
@@ -41,19 +28,7 @@ export default function CardAddBarbecue() {
               marginTop: "50%",
             }}
           >
-            <h2
-              style={{
-                color: "#000",
-                textAlign: "center",
-                fontFamily: "Raleway",
-                fontSize: "21px",
-                fontStyle: "normal",
-                fontWeight: 700,
-                lineHeight: "normal",
-              }}
-            >
-              Adicionar Churras
-            </h2>
+            <h2 className={styles.textCard}>Adicionar Churras</h2>
           </div>
         </div>
       </div>
