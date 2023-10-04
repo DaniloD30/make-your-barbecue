@@ -2,6 +2,7 @@ import Image from "next/image";
 import IconPeople from "../../../../assets/icon_people.svg";
 import IconMoney from "../../../../assets/icon_money.svg";
 import styles from "./CardDetails.module.css";
+import RowDetail from "../../RowDetail";
 export default function CardDetails() {
   /*
   TODO: Agenda de churras é um componente, pq se repete na login
@@ -34,6 +35,21 @@ export default function CardDetails() {
             <Image src={IconMoney} alt="icon-people" />
             <div className={styles.textsIcons}>R$280</div>
           </div>
+        </div>
+        <div
+          style={{ marginTop: "20px", marginLeft: "20px", marginRight: "20px" }}
+        >
+          <RowDetail />
+          <RowDetail />
+          <RowDetail />
+          <RowDetail />
+          <RowDetail />
+          <RowDetail />
+          <RowDetail />
+          <RowDetail />
+          <RowDetail />
+          <RowDetail />
+       
         </div>
       </div>
     </>
