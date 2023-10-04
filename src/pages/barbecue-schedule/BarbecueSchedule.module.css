@@ -1,0 +1,76 @@
+.container {
+  display: flex;
+  min-height: 20vh;
+}
+
+.containerName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 10vh;
+  position: absolute;
+  width: 100%;
+  margin-top: 10%;
+}
+
+.name {
+  color: #000;
+  font-family: Raleway;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  gap: 24px;
+  margin-top: 30%;
+  max-width: 60%;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1485px) {
+  .containerName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 30vh;
+    position: absolute;
+    width: 100%;
+    margin-top: 10%;
+  }
+  .card {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    gap: 24px;
+    margin-top: 70%;
+    max-width: 70%;
+    flex-wrap: wrap;
+  }
+  /* CSS */
+}
+
+@media (max-width: 839px) {
+  .containerName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    position: absolute;
+    width: 100%;
+    margin-top: 10%;
+  }
+  .card {
+    display: flex;
+    position: absolute;
+    gap: 24px;
+    margin-top: 100%;
+    max-width: 100%;
+    flex-wrap: wrap;
+  }
+  /* CSS */
+}

@@ -94,3 +94,8 @@
   background-color: rgba(128, 128, 128, 0.3);
   color: black;
 }
+
+.buttonLogin:disabled{
+  background-color: red;
+  color: black;
+}

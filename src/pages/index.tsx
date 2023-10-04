@@ -2,6 +2,9 @@ import Image from "next/image";
 import background from "../assets/backgroundBarbecue1.png";
 import styles from "../styles/Login.module.css";
 export default function Login() {
+  /* 
+  TODO: Icone trinca
+  */
   return (
     <>
       <div className={styles.container}>
