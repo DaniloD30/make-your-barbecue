@@ -1,7 +1,5 @@
 import Image from "next/image";
 import background from "../../assets/backgroundBarbecue-mid.png";
-import IconMoney from "../../assets/icon_money.svg";
-import IconPeople from "../../assets/icon_people.svg";
 import styles from "./BarbecueSchedule.module.css";
 import Card from "@/components/barbecueSchedule/Card";
 import CardAddBarbecue from "@/components/barbecueSchedule/CardAddBarbecue";

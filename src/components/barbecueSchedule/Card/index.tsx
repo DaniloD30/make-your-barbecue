@@ -5,6 +5,8 @@ import styles from "./Card.module.css";
 export default function Card() {
   /*
   TODO: Agenda de churras é um componente, pq se repete na login
+  TODO: title card tem que ter max width e ellipsis no texto para não ultrapassar
+  TODO: A parte do dinheiro tem que ter máscara
   */
   return (
     <>
