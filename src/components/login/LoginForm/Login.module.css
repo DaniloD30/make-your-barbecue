@@ -1,29 +1,3 @@
-.container {
-  display: flex;
-  background-color: #ffd836;
-  min-height: 100vh;
-  position: relative;
-}
-
-.containerName {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 10vh;
-  position: absolute;
-  width: 100%;
-  margin-top: 10%;
-}
-
-.name {
-  color: #000;
-  font-family: Raleway;
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 800;
-  line-height: normal;
-}
-
 .form {
   display: flex;
   justify-content: center;
