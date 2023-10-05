@@ -96,6 +96,7 @@
 }
 
 .buttonLogin:disabled{
-  background-color: red;
-  color: black;
+  background-color: #a9a7a7;
+  color: #fff;
+  cursor: unset;
 }
