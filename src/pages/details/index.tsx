@@ -5,11 +5,15 @@ import CardDetails from "@/components/details/CardDetails/Card";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { useBarbecue } from "@/contexts/BarbecueContext";
+import { useModal } from "@/contexts/ModalContext";
+import Modal from "@/components/barbecueSchedule/Modal";
+import FormAddBarbecue from "@/components/barbecueSchedule/FormAddBarbecue";
+import FormAddGuest from "@/components/details/FormAddGuest";
 
 export default function Details() {
   const { barbecueDetail } = useBarbecue();
   const router = useRouter();
-
+  const { toggle, isOpen } = useModal();
   useEffect(() => {
     if (barbecueDetail?.title === "") {
       router.push("/barbecue-schedule");
@@ -28,6 +32,9 @@ export default function Details() {
           <div className={styles.name}>Agenda de Churras</div>
           <CardDetails />
         </div>
+        <Modal isOpen={isOpen} toggle={toggle}>
+          <FormAddGuest/>
+        </Modal>
       </div>
     </>
   );

@@ -5,17 +5,14 @@ import styles from "./CardDetails.module.css";
 import RowDetail from "../../RowDetail";
 import { useBarbecue } from "@/contexts/BarbecueContext";
 import { formatDate } from "@/utils";
+import { useModal } from "@/contexts/ModalContext";
 
 export default function CardDetails() {
-  const { barbecueDetail } = useBarbecue();
-
+  const { barbecueDetail, scheduled } = useBarbecue();
+  const { toggle } = useModal();
   /*
   TODO: Agenda de churras é um componente, pq se repete na login
   TODO: Title max width e ellips
-  TODO: Button adicionar novo convidade
-        Nome, checked, filter by id, se o estado do barbecue ficar no contexto
-        não vou precisar filtrar, ja que ele vai ter um array de convidados
-        e todas vez que eu adicionar
   */
 
   return (
@@ -49,19 +46,17 @@ export default function CardDetails() {
             <div className={styles.textsIcons}>R${barbecueDetail?.price}</div>
           </div>
         </div>
+        <div className={styles.rowDetail}>
+          <button onClick={toggle}>Add guest</button>
+        </div>
         <div
           style={{ marginTop: "20px", marginLeft: "20px", marginRight: "20px" }}
         >
-          <RowDetail />
-          <RowDetail />
-          <RowDetail />
-          <RowDetail />
-          <RowDetail />
-          <RowDetail />
-          <RowDetail />
-          <RowDetail />
-          <RowDetail />
-          <RowDetail />
+          {scheduled?.map((item) =>
+            item.guests.map((itemGuest) => (
+              <RowDetail key={itemGuest.id} guest={itemGuest} />
+            ))
+          )}
         </div>
       </div>
     </>

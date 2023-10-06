@@ -1,5 +1,10 @@
+import { Guests } from "@/interfaces/barbecue";
 import styles from "./RowDetail.module.css";
-export default function RowDetail() {
+
+interface Props {
+  guest: Guests;
+}
+export default function RowDetail({ guest }: Props) {
   return (
     <>
       <div
@@ -28,7 +33,7 @@ export default function RowDetail() {
               marginLeft: '30px'
             }}
           >
-            Alice
+            {guest.name}
           </h3>
         </div>
         <div>
@@ -42,7 +47,7 @@ export default function RowDetail() {
               lineHeight: "normal",
             }}
           >
-            R$ 20,00
+            R$  {guest.price}
           </h3>
         </div>
       </div>

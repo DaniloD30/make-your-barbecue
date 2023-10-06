@@ -1,4 +1,4 @@
-import styles from "./FormAddBarbecue.module.css";
+import styles from "./FormAddGuest.module.css";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -6,35 +6,22 @@ import { PropsScheduled } from "@/interfaces/barbecue";
 import ErrorField from "@/components/ErrorField";
 import { useBarbecue } from "@/contexts/BarbecueContext";
 import uuid from "react-uuid";
+import { useModal } from "@/contexts/ModalContext";
+import { useEffect } from "react";
+
 const schema = z.object({
   id: z.string(),
-  date: z.coerce
-    .date()
-    .min(new Date(), {
-      message: "Date cannot go past",
-    })
-    .max(new Date(2023, 12, 31)),
-  title: z.string().min(1, { message: "Required" }),
-  qtPeople: z.string().min(1, { message: "Required" }),
+  name: z.string().min(1, { message: "Required" }),
+  payed: z.boolean(),
   price: z.string().min(1, { message: "Required" }),
-  guests: z.array(
-    z.object({
-      id: z.string(),
-      name: z.string(),
-      payed: z.boolean(),
-      price: z.string(),
-    })
-  ),
 });
-
-interface Props {
-  toggle: () => void;
-}
 
 type FormDataProps = z.infer<typeof schema>;
 
-export default function FormAddBarbecue({ toggle }: Props) {
-  const { handleAdd } = useBarbecue();
+export default function FormAddGuest() {
+  const { toggle } = useModal();
+  const { barbecueDetail, addGuestToEvent } = useBarbecue();
+
   const {
     handleSubmit,
     register,
@@ -45,26 +32,29 @@ export default function FormAddBarbecue({ toggle }: Props) {
     resolver: zodResolver(schema),
     defaultValues: {
       id: uuid(),
-      date: new Date(),
-      title: "",
-      qtPeople: "",
+      name: "",
+      payed: false,
       price: "",
-      guests: [],
     },
   });
 
   const handleSubmitForm = (data: FormDataProps) => {
-    handleAdd(data);
+    addGuestToEvent(barbecueDetail ? barbecueDetail.id : "0", data);
     toggle();
   };
 
   const disabledButtonAdd = (): boolean => {
     return (
-      Boolean(errors.date) ||
-      Boolean(errors.title) ||
-      Boolean(errors.qtPeople) ||
-      Boolean(errors.price)
+      Boolean(errors.name) || Boolean(errors.payed) || Boolean(errors.price)
     );
+  };
+
+  const suggestValue = () => {
+    if (barbecueDetail && barbecueDetail) {
+      if (barbecueDetail.price && barbecueDetail.qtPeople) {
+        return +barbecueDetail.price / +barbecueDetail.qtPeople;
+      }
+    }
   };
 
   return (
@@ -76,35 +66,13 @@ export default function FormAddBarbecue({ toggle }: Props) {
           </p>
           <div className={styles.inputLoginAndPass}>
             <input
-              {...register("date")}
-              type="date"
-              className={styles.inputStyle}
-              max={`${new Date().getFullYear()}-12-31`}
-              min={`2023-01-01`}
-              placeholder="Date of barbecue"
-            />
-            {errors.date && <ErrorField errorMessage={errors.date.message} />}
-          </div>
-          <div className={styles.inputLoginAndPass}>
-            <input
-              {...register("title")}
+              {...register("name")}
               type="text"
               className={styles.inputStyle}
               placeholder="Name"
               maxLength={255}
             />
-            {errors.title && <ErrorField errorMessage={errors.title.message} />}
-          </div>
-          <div className={styles.inputLoginAndPass}>
-            <input
-              {...register("qtPeople")}
-              type="number"
-              className={styles.inputStyle}
-              placeholder="Quantity People"
-            />
-            {errors.qtPeople && (
-              <ErrorField errorMessage={errors.qtPeople.message} />
-            )}
+            {errors.name && <ErrorField errorMessage={errors.name.message} />}
           </div>
           <div className={styles.inputLoginAndPass}>
             <input
@@ -116,6 +84,9 @@ export default function FormAddBarbecue({ toggle }: Props) {
               max="1000000.00"
               step="0.01"
             />
+            <div>
+              <p>Valor sugerido R${suggestValue()}</p>
+            </div>
             {errors.price && <ErrorField errorMessage={errors.price.message} />}
           </div>
           <div className={styles.containerButton}>

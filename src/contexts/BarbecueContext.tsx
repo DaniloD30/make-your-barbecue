@@ -7,6 +7,7 @@ interface BarbecueContextData {
   barbecueDetail: PropsScheduled | undefined;
   handleAdd: (objBarbecueDetail: PropsScheduled) => void;
   scheduled: PropsScheduled[] | undefined;
+  addGuestToEvent: (idBarbecue: string, newGuest: Guests) => void;
 }
 
 interface BarbecueContextProviderProps {
@@ -37,17 +38,13 @@ export function BarbecueContextProvider({
     setScheduled((prevState) => [...prevState, data]);
   };
 
-  const addGuestToEvent = (idBarbecue: number, newGuest: Guests) => {
-    // Copie o array de eventos para evitar mutação direta
+  const addGuestToEvent = (idBarbecue: string, newGuest: Guests) => {
+    const index = scheduled.findIndex((item) => item.id == idBarbecue);
     const updatedGuestList = [...scheduled];
-
-    // Adicione o novo convidado ao array de convidados do evento
-    if (updatedGuestList[idBarbecue]) {
-      updatedGuestList[idBarbecue].guests?.push(newGuest);
-      setScheduled(updatedGuestList);
+    if (updatedGuestList[index]) {
+      updatedGuestList[index].guests.push(newGuest);
     }
-
-    // Atualize o estado com o novo array
+    setScheduled(updatedGuestList);
   };
 
   const markGuestAsPayed = (eventIndex: number, guestIndex: number) => {
@@ -79,6 +76,7 @@ export function BarbecueContextProvider({
         barbecueDetail,
         handleAdd,
         scheduled,
+        addGuestToEvent,
       }}
     >
       {children}
