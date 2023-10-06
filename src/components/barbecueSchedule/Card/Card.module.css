@@ -27,6 +27,10 @@
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  white-space: nowrap; 
+  width: 150px; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
 }
 
 .containerIcons {
@@ -45,4 +49,8 @@
   font-weight: 500;
   line-height: normal;
   margin-left: 10px;
+  white-space: nowrap; 
+  max-width: 75px; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
 }

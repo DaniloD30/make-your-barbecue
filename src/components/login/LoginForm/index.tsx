@@ -40,6 +40,7 @@ export default function LoginForm() {
               type="text"
               className={styles.inputStyle}
               placeholder="e-mail"
+              maxLength={255}
             />
             {errors.email && (
               <p
@@ -58,6 +59,7 @@ export default function LoginForm() {
               type="password"
               className={styles.inputStyle}
               placeholder="senha"
+              maxLength={255}
             />
             {errors.pass && (
               <p
