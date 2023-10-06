@@ -62,7 +62,7 @@ export default function FormAddGuest() {
       <div>
         <form className={styles.form} onSubmit={handleSubmit(handleSubmitForm)}>
           <p className={styles.labelInput}>
-            Adicione as informações para agendar seu churras!
+            Adicione as informações para adicionar um convidado!
           </p>
           <div className={styles.inputLoginAndPass}>
             <input
@@ -84,10 +84,11 @@ export default function FormAddGuest() {
               max="1000000.00"
               step="0.01"
             />
-            <div>
-              <p>Valor sugerido R${suggestValue()}</p>
-            </div>
             {errors.price && <ErrorField errorMessage={errors.price.message} />}
+          </div>
+          <div>
+            <p>Valor sugerido com bebida R${suggestValue()}</p>
+            <p>Valor sugerido sem bebida R${suggestValue()}</p>
           </div>
           <div className={styles.containerButton}>
             <button

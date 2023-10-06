@@ -1,17 +1,23 @@
 import { Guests } from "@/interfaces/barbecue";
 import styles from "./RowDetail.module.css";
+import { useBarbecue } from "@/contexts/BarbecueContext";
+import { useEffect } from "react";
 
 interface Props {
   guest: Guests;
+  indexGuest: number;
+  indexBarbecue: number;
 }
-export default function RowDetail({ guest }: Props) {
+export default function RowDetail({ guest, indexGuest, indexBarbecue }: Props) {
+  const { markGuestAsPayed } = useBarbecue();
+
   return (
     <>
       <div
         style={{
           display: "flex",
           justifyContent: "space-between",
-          marginTop: "10px"
+          marginTop: "10px",
         }}
       >
         <div style={{ display: "flex" }}>
@@ -19,6 +25,8 @@ export default function RowDetail({ guest }: Props) {
             <input
               className={styles.checkBoxNone}
               type="checkbox"
+              checked={guest.payed}
+              onChange={() => markGuestAsPayed(indexBarbecue, indexGuest)}
             />
             <span className={styles.checkmark} />
           </label>
@@ -30,7 +38,7 @@ export default function RowDetail({ guest }: Props) {
               fontStyle: "normal",
               fontWeight: 700,
               lineHeight: "normal",
-              marginLeft: '30px'
+              marginLeft: "30px",
             }}
           >
             {guest.name}
@@ -47,7 +55,7 @@ export default function RowDetail({ guest }: Props) {
               lineHeight: "normal",
             }}
           >
-            R$  {guest.price}
+            R$ {guest.price}
           </h3>
         </div>
       </div>

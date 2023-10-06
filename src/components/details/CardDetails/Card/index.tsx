@@ -46,15 +46,20 @@ export default function CardDetails() {
             <div className={styles.textsIcons}>R${barbecueDetail?.price}</div>
           </div>
         </div>
-        <div className={styles.rowDetail}>
-          <button onClick={toggle}>Add guest</button>
+        <div className={styles.rowAddButton}>
+          <button className={styles.buttonAdd} onClick={toggle}>Add guest</button>
         </div>
         <div
           style={{ marginTop: "20px", marginLeft: "20px", marginRight: "20px" }}
         >
-          {scheduled?.map((item) =>
-            item.guests.map((itemGuest) => (
-              <RowDetail key={itemGuest.id} guest={itemGuest} />
+          {scheduled?.map((item, indexBarbecue) =>
+            item.guests.map((itemGuest, indexGuest) => (
+              <RowDetail
+                key={itemGuest.id}
+                guest={itemGuest}
+                indexBarbecue={indexBarbecue}
+                indexGuest={indexGuest}
+              />
             ))
           )}
         </div>
