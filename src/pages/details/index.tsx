@@ -2,8 +2,19 @@ import Image from "next/image";
 import background from "../../assets/backgroundBarbecue-mid.png";
 import styles from "./Details.module.css";
 import CardDetails from "@/components/details/CardDetails/Card";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
+import { useBarbecue } from "@/contexts/BarbecueContext";
 
 export default function Details() {
+  const { barbecueDetail } = useBarbecue();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (barbecueDetail?.title === "") {
+      router.push("/barbecue-schedule");
+    }
+  }, [barbecueDetail, router]);
   /*
   TODO: Agenda de churras é um componente, pq se repete na login
   TODO: Title max width e ellips

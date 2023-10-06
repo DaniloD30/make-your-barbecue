@@ -13,6 +13,9 @@ export default function BarbecueSchedule() {
   const [isOpen, setisOpen] = useState(false);
   const [scheduled, setScheduled] = useState<PropsScheduled[]>([]);
 
+  //O login tem que estar no contexto, para garantir o acesso a rota
+  // Por somente quem logou
+  
   const toggle = () => {
     setisOpen(!isOpen);
   };

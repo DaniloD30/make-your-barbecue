@@ -3,5 +3,10 @@ export interface PropsScheduled {
     title: string;
     qtPeople: string;
     price: string;
+    guests?: Guests[];
   }
-  
+
+interface Guests {
+  name: string;
+  payed: boolean;
+}
