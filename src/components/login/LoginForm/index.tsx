@@ -3,6 +3,7 @@ import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/router";
+import ErrorField from "@/components/ErrorField";
 
 const schema = z.object({
   email: z.string().email("Invalid e-mail"),
@@ -42,15 +43,8 @@ export default function LoginForm() {
               placeholder="e-mail"
               maxLength={255}
             />
-            {errors.email && (
-              <p
-                style={{
-                  marginLeft: "5px",
-                }}
-              >
-                {errors.email.message}
-              </p>
-            )}
+
+            {errors.email && <ErrorField errorMessage={errors.email.message} />}
           </div>
           <div className={styles.inputLoginAndPass}>
             <label className={styles.labelInput}>Password</label>
@@ -61,15 +55,7 @@ export default function LoginForm() {
               placeholder="senha"
               maxLength={255}
             />
-            {errors.pass && (
-              <p
-                style={{
-                  marginLeft: "5px",
-                }}
-              >
-                {errors.pass.message}
-              </p>
-            )}
+            {errors.pass && <ErrorField errorMessage={errors.pass.message} />}
           </div>
           <div className={styles.containerButton}>
             <button

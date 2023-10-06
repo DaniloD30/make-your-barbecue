@@ -50,7 +50,7 @@
   line-height: normal;
   margin-left: 10px;
   white-space: nowrap; 
-  max-width: 75px; 
+  max-width: 125px; 
   overflow: hidden;
   text-overflow: ellipsis; 
 }

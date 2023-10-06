@@ -3,6 +3,7 @@ import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { PropsScheduled } from "@/interfaces/barbecue";
+import ErrorField from "@/components/ErrorField";
 
 const schema = z.object({
   date: z.coerce
@@ -16,7 +17,6 @@ const schema = z.object({
   price: z.string().min(1, { message: "Required" }),
 });
 
-
 interface Props {
   handleAdd: (obj: PropsScheduled) => void;
   toggle: () => void;
@@ -25,7 +25,6 @@ interface Props {
 type FormDataProps = z.infer<typeof schema>;
 
 export default function FormAddBarbecue({ handleAdd, toggle }: Props) {
-
   const {
     handleSubmit,
     register,
@@ -73,15 +72,7 @@ export default function FormAddBarbecue({ handleAdd, toggle }: Props) {
               min={`2023-01-01`}
               placeholder="Date of barbecue"
             />
-            {errors.date && (
-              <p
-                style={{
-                  marginLeft: "5px",
-                }}
-              >
-                {errors.date.message}
-              </p>
-            )}
+            {errors.date && <ErrorField errorMessage={errors.date.message} />}
           </div>
           <div className={styles.inputLoginAndPass}>
             <input
@@ -91,15 +82,7 @@ export default function FormAddBarbecue({ handleAdd, toggle }: Props) {
               placeholder="Name"
               maxLength={255}
             />
-            {errors.title && (
-              <p
-                style={{
-                  marginLeft: "5px",
-                }}
-              >
-                {errors.title.message}
-              </p>
-            )}
+            {errors.title && <ErrorField errorMessage={errors.title.message} />}
           </div>
           <div className={styles.inputLoginAndPass}>
             <input
@@ -109,13 +92,7 @@ export default function FormAddBarbecue({ handleAdd, toggle }: Props) {
               placeholder="Quantity People"
             />
             {errors.qtPeople && (
-              <p
-                style={{
-                  marginLeft: "5px",
-                }}
-              >
-                {errors.qtPeople.message}
-              </p>
+              <ErrorField errorMessage={errors.qtPeople.message} />
             )}
           </div>
           <div className={styles.inputLoginAndPass}>
@@ -128,15 +105,7 @@ export default function FormAddBarbecue({ handleAdd, toggle }: Props) {
               max="1000000.00"
               step="0.01"
             />
-            {errors.price && (
-              <p
-                style={{
-                  marginLeft: "5px",
-                }}
-              >
-                {errors.price.message}
-              </p>
-            )}
+            {errors.price && <ErrorField errorMessage={errors.price.message} />}
           </div>
           <div className={styles.containerButton}>
             <button

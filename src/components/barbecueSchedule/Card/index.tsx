@@ -7,9 +7,7 @@ import { formatDate } from "@/utils";
 
 export default function Card({ date, title, qtPeople, price }: PropsScheduled) {
   /*
-  TODO: Agenda de churras é um componente, pq se repete na login
-  TODO: title card tem que ter max width e ellipsis no texto para não ultrapassar
-  TODO: A parte do dinheiro tem que ter máscara
+  TODO: Agenda de churras é um componente, pq se repete na login LAYOUT
   */
   return (
     <>
