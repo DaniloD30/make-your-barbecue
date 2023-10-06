@@ -3,14 +3,19 @@
   width: 282px;
   border-radius: 2px;
   background: #f1f1f1;
+  border: none;
+  cursor: pointer;
 }
 
+.container:hover {
+  background-color: rgba(128, 128, 128, 0.3);
+  color: black;
+}
 .containerIcon {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  height: 80%;
 }
 
 .textCard {
@@ -21,4 +26,8 @@
   font-style: normal;
   font-weight: 700;
   line--height: normal;
+}
+
+.buttonClose {
+  
 }

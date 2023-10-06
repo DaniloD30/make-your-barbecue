@@ -2,11 +2,13 @@ import Image from "next/image";
 import Icon from "../../../assets/icon_bbq.png";
 import Ellipse from "../../../assets/Ellipse.png";
 import styles from "./CardAddBarbecue.module.css";
-
-export default function CardAddBarbecue() {
+interface Props {
+  openModal: () => void;
+}
+export default function CardAddBarbecue({ openModal }: Props) {
   return (
     <>
-      <div className={styles.container}>
+      <button className={styles.container} onClick={openModal}>
         <div className={styles.containerIcon}>
           <div>
             <Image src={Ellipse} alt="ellipse" />
@@ -31,7 +33,7 @@ export default function CardAddBarbecue() {
             <h2 className={styles.textCard}>Adicionar Churras</h2>
           </div>
         </div>
-      </div>
+      </button>
     </>
   );
 }
