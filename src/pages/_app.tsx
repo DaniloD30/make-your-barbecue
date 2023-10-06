@@ -11,6 +11,7 @@ export default function App({ Component, pageProps }: AppProps) {
         qtPeople: "",
         price: "",
       }}
+      sheduledInitialValue={[]}
     >
       <Component {...pageProps} />
     </BarbecueContextProvider>

@@ -1,12 +1,14 @@
 export interface PropsScheduled {
-    date: Date;
-    title: string;
-    qtPeople: string;
-    price: string;
-    guests?: Guests[];
-  }
+  id: string;
+  date: Date;
+  title: string;
+  qtPeople: string;
+  price: string;
+  guests?: Guests[];
+}
 
-interface Guests {
+export interface Guests {
+  id: string;
   name: string;
   payed: boolean;
 }

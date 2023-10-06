@@ -4,8 +4,10 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { PropsScheduled } from "@/interfaces/barbecue";
 import ErrorField from "@/components/ErrorField";
-
+import { useBarbecue } from "@/contexts/BarbecueContext";
+import uuid from 'react-uuid';
 const schema = z.object({
+  id: z.string(),
   date: z.coerce
     .date()
     .min(new Date(), {
@@ -18,13 +20,13 @@ const schema = z.object({
 });
 
 interface Props {
-  handleAdd: (obj: PropsScheduled) => void;
   toggle: () => void;
 }
 
 type FormDataProps = z.infer<typeof schema>;
 
-export default function FormAddBarbecue({ handleAdd, toggle }: Props) {
+export default function FormAddBarbecue({  toggle }: Props) {
+  const {handleAdd} = useBarbecue()
   const {
     handleSubmit,
     register,
@@ -34,6 +36,7 @@ export default function FormAddBarbecue({ handleAdd, toggle }: Props) {
     criteriaMode: "all",
     resolver: zodResolver(schema),
     defaultValues: {
+      id: uuid(),
       date: new Date(),
       title: "",
       qtPeople: "",
@@ -42,7 +45,7 @@ export default function FormAddBarbecue({ handleAdd, toggle }: Props) {
   });
 
   const handleSubmitForm = (data: FormDataProps) => {
-    // return router.push("/barbecue-schedule");
+    console.log("data -->", data)
     handleAdd(data);
     toggle();
   };

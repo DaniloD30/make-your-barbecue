@@ -4,24 +4,19 @@ import styles from "./BarbecueSchedule.module.css";
 import Card from "@/components/barbecueSchedule/Card";
 import CardAddBarbecue from "@/components/barbecueSchedule/CardAddBarbecue";
 import Modal from "@/components/barbecueSchedule/Modal";
-import {  useState } from "react";
+import { useState } from "react";
 import FormAddBarbecue from "@/components/barbecueSchedule/FormAddBarbecue";
 import { PropsScheduled } from "@/interfaces/barbecue";
-
+import { useBarbecue } from "@/contexts/BarbecueContext";
 
 export default function BarbecueSchedule() {
   const [isOpen, setisOpen] = useState(false);
-  const [scheduled, setScheduled] = useState<PropsScheduled[]>([]);
-
+  const { scheduled } = useBarbecue();
   //O login tem que estar no contexto, para garantir o acesso a rota
   // Por somente quem logou
-  
+
   const toggle = () => {
     setisOpen(!isOpen);
-  };
-
-  const handleAdd = (data: PropsScheduled) => {
-    setScheduled((prevState) => [...prevState, data]);
   };
 
   return (
@@ -32,9 +27,10 @@ export default function BarbecueSchedule() {
           <div className={styles.name}>Agenda de Churras</div>
           <div className={styles.card}>
             <CardAddBarbecue openModal={toggle} />
-            {scheduled.length > 0
+            {scheduled && scheduled.length > 0
               ? scheduled.map((item, index) => (
                   <Card
+                    id={item.id}
                     key={`${item.date}-${item.title}-${index}`}
                     date={item.date}
                     title={item.title}
@@ -46,7 +42,7 @@ export default function BarbecueSchedule() {
           </div>
         </div>
         <Modal isOpen={isOpen} toggle={toggle}>
-          <FormAddBarbecue handleAdd={handleAdd} toggle={toggle} />
+          <FormAddBarbecue toggle={toggle} />
         </Modal>
       </div>
     </>

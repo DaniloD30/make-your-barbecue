@@ -6,7 +6,7 @@ import { PropsScheduled } from "@/interfaces/barbecue";
 import { formatDate } from "@/utils";
 import { useBarbecue } from "@/contexts/BarbecueContext";
 
-export default function Card({ date, title, qtPeople, price }: PropsScheduled) {
+export default function Card({ date, title, qtPeople, price, id }: PropsScheduled) {
   const { openCardDetail } = useBarbecue();
   /*
   TODO: Agenda de churras é um componente, pq se repete na login LAYOUT
@@ -17,6 +17,7 @@ export default function Card({ date, title, qtPeople, price }: PropsScheduled) {
         className={styles.cardContainer}
         onClick={() =>
           openCardDetail({
+            id: id,
             date: date,
             title: title,
             qtPeople: qtPeople,
