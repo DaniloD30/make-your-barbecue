@@ -6,18 +6,14 @@ import CardAddBarbecue from "@/components/barbecueSchedule/CardAddBarbecue";
 import Modal from "@/components/barbecueSchedule/Modal";
 import { useState } from "react";
 import FormAddBarbecue from "@/components/barbecueSchedule/FormAddBarbecue";
-import { PropsScheduled } from "@/interfaces/barbecue";
 import { useBarbecue } from "@/contexts/BarbecueContext";
+import { useModal } from "@/contexts/ModalContext";
 
 export default function BarbecueSchedule() {
-  const [isOpen, setisOpen] = useState(false);
   const { scheduled } = useBarbecue();
+  const { toggle, isOpen } = useModal();
   //O login tem que estar no contexto, para garantir o acesso a rota
   // Por somente quem logou
-
-  const toggle = () => {
-    setisOpen(!isOpen);
-  };
 
   return (
     <>
