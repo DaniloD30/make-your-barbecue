@@ -43,9 +43,14 @@ export function BarbecueContextProvider({
     const index = scheduled.findIndex((item) => item.id == idBarbecue);
     const updatedGuestList = [...scheduled];
     if (updatedGuestList[index]) {
+      updatedGuestList[index].price =
+        (+updatedGuestList[index].price + +newGuest.price).toString();
+      updatedGuestList[index].qtPeople = (+updatedGuestList[index].qtPeople + 1).toString();
       updatedGuestList[index].guests.push(newGuest);
     }
     setScheduled(updatedGuestList);
+    setBarbecueDetail(updatedGuestList[index]);
+
   };
 
   const markGuestAsPayed = (eventIndex: number, guestIndex: number) => {

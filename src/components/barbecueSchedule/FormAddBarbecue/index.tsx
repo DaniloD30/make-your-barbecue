@@ -47,8 +47,8 @@ export default function FormAddBarbecue({ toggle }: Props) {
       id: uuid(),
       date: new Date(),
       title: "",
-      qtPeople: "",
-      price: "",
+      qtPeople: "0",
+      price: "0",
       guests: [],
     },
   });
@@ -94,29 +94,6 @@ export default function FormAddBarbecue({ toggle }: Props) {
               maxLength={255}
             />
             {errors.title && <ErrorField errorMessage={errors.title.message} />}
-          </div>
-          <div className={styles.inputLoginAndPass}>
-            <input
-              {...register("qtPeople")}
-              type="number"
-              className={styles.inputStyle}
-              placeholder="Quantity People"
-            />
-            {errors.qtPeople && (
-              <ErrorField errorMessage={errors.qtPeople.message} />
-            )}
-          </div>
-          <div className={styles.inputLoginAndPass}>
-            <input
-              {...register("price")}
-              placeholder="Price"
-              className={styles.inputStyle}
-              type="number"
-              min="0.00"
-              max="1000000.00"
-              step="0.01"
-            />
-            {errors.price && <ErrorField errorMessage={errors.price.message} />}
           </div>
           <div className={styles.containerButton}>
             <button
