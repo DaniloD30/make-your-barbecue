@@ -1,25 +1,11 @@
-import { BarbecueContextProvider } from "@/contexts/BarbecueContext";
-import { ModalContextProvider } from "@/contexts/ModalContext";
+import Contexts from "@/contexts";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <ModalContextProvider modalInitialValue={false}>
-      <BarbecueContextProvider
-        barbecueInitialValue={{
-          id: "",
-          date: new Date(),
-          title: "",
-          qtPeople: "",
-          guests: [],
-          suggestedValueBeer: "",
-          price: "",
-        }}
-        sheduledInitialValue={[]}
-      >
-        <Component {...pageProps} />
-      </BarbecueContextProvider>
-    </ModalContextProvider>
+    <Contexts>
+      <Component {...pageProps} />
+    </Contexts>
   );
 }

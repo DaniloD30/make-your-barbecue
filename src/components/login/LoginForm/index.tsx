@@ -4,19 +4,22 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/router";
 import ErrorField from "@/components/ErrorField";
+import { useLogin } from "@/contexts/LoginContext";
 
 const schema = z.object({
   email: z.string().email("Invalid e-mail"),
   pass: z.string().min(8, "At least 8 characters"),
 });
+type FormDataProps = z.infer<typeof schema>;
 
 export default function LoginForm() {
   const router = useRouter();
+  const {handleSetUser} = useLogin()
   const {
     handleSubmit,
     register,
     formState: { errors },
-  } = useForm({
+  } = useForm<FormDataProps>({
     mode: "all",
     criteriaMode: "all",
     resolver: zodResolver(schema),
@@ -26,7 +29,8 @@ export default function LoginForm() {
     },
   });
 
-  const handleSubmitForm = () => {
+  const handleSubmitForm = (data: FormDataProps) => { 
+    handleSetUser(data)
     return router.push("/barbecue-schedule");
   };
 

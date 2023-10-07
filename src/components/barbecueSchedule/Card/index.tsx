@@ -2,7 +2,7 @@ import Image from "next/image";
 import IconMoney from "../../../assets/icon_money.svg";
 import IconPeople from "../../../assets/icon_people.svg";
 import styles from "./Card.module.css";
-import { PropsScheduled } from "@/interfaces/barbecue";
+import { PropsScheduled } from "@/interfaces/Barbecue";
 import { formatDate } from "@/utils";
 import { useBarbecue } from "@/contexts/BarbecueContext";
 

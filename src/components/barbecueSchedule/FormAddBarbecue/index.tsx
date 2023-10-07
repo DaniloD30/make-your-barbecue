@@ -22,6 +22,7 @@ const schema = z.object({
       name: z.string(),
       payed: z.boolean(),
       price: z.string(),
+      suggestedValueBeer: z.boolean(),
     })
   ),
   suggestedValueBeer: z.string().min(1, { message: "Required" }),

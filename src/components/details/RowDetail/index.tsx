@@ -1,4 +1,4 @@
-import { Guests } from "@/interfaces/barbecue";
+import { Guests } from "@/interfaces/Barbecue";
 import styles from "./RowDetail.module.css";
 import { useBarbecue } from "@/contexts/BarbecueContext";
 import BeerIcon from "../../../assets/icons8-beer-24.png";

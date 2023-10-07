@@ -6,10 +6,22 @@ import Modal from "@/components/barbecueSchedule/Modal";
 import styles from "./BarbecueSchedule.module.css";
 import { useBarbecue } from "@/contexts/BarbecueContext";
 import { useModal } from "@/contexts/ModalContext";
+import { useLogin } from "@/contexts/LoginContext";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 const BarbecueSchedule = () => {
   const { scheduled } = useBarbecue();
   const { toggle, isOpen } = useModal();
+  const router = useRouter();
+  const { user } = useLogin();
+
+  useEffect(() => {
+    if (user.email === "") {
+      router.push("/");
+    }
+  }, [user, router]);
+  
   return (
     <>
       <BarbecueLayout>

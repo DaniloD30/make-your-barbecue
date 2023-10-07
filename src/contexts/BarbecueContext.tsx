@@ -1,4 +1,4 @@
-import { Guests, PropsScheduled } from "@/interfaces/barbecue";
+import { Guests, PropsScheduled } from "@/interfaces/Barbecue";
 import { useRouter } from "next/router";
 import { createContext, ReactNode, useContext, useState } from "react";
 
