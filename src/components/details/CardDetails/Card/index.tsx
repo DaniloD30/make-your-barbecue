@@ -1,15 +1,19 @@
 import Image from "next/image";
 import IconPeople from "../../../../assets/icon_people.svg";
+import IconBack from "../../../../assets/icons8-back-24.png";
+import IconAdd from "../../../../assets/icons8-add-24.png";
 import IconMoney from "../../../../assets/icon_money.svg";
 import styles from "./CardDetails.module.css";
 import RowDetail from "../../RowDetail";
 import { useBarbecue } from "@/contexts/BarbecueContext";
 import { formatDate } from "@/utils";
 import { useModal } from "@/contexts/ModalContext";
+import { useRouter } from "next/router";
 
 export default function CardDetails() {
   const { barbecueDetail, scheduled } = useBarbecue();
   const { toggle } = useModal();
+  const router = useRouter();
   /*
   TODO: Agenda de churras é um componente, pq se repete na login
   TODO: Title max width e ellips
@@ -18,6 +22,15 @@ export default function CardDetails() {
   return (
     <>
       <div className={styles.cardDetail}>
+        <div className={styles.comeBack}>
+          <button
+            className={styles.buttonComeBack}
+            onClick={() => router.push("/barbecue-schedule")}
+          >
+            <Image src={IconBack} alt="icon-back" />
+            Voltar
+          </button>
+        </div>
         <div className={styles.rowDetail}>
           <div className={styles.customText}>
             {formatDate(
@@ -47,7 +60,10 @@ export default function CardDetails() {
           </div>
         </div>
         <div className={styles.rowAddButton}>
-          <button className={styles.buttonAdd} onClick={toggle}>Add guest</button>
+          <button className={styles.buttonAdd} onClick={toggle}>
+            <Image src={IconAdd} alt="icon-add" />
+            Adicionar participante do churras!
+          </button>
         </div>
         <div
           style={{ marginTop: "20px", marginLeft: "20px", marginRight: "20px" }}

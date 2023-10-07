@@ -30,6 +30,8 @@ export default function BarbecueSchedule() {
                     key={`${item.date}-${item.title}-${index}`}
                     date={item.date}
                     title={item.title}
+                    guests={item.guests}
+                    suggestedValueBeer={item.suggestedValueBeer}
                     qtPeople={item.qtPeople}
                     price={item.price}
                   />

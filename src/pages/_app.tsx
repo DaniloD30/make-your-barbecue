@@ -12,6 +12,8 @@ export default function App({ Component, pageProps }: AppProps) {
           date: new Date(),
           title: "",
           qtPeople: "",
+          guests: [],
+          suggestedValueBeer: "",
           price: "",
         }}
         sheduledInitialValue={[]}

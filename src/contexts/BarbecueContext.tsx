@@ -28,6 +28,7 @@ export function BarbecueContextProvider({
     useState<PropsScheduled>(barbecueInitialValue);
   const [scheduled, setScheduled] =
     useState<PropsScheduled[]>(sheduledInitialValue);
+    
   const router = useRouter();
 
   const openCardDetail = (objBarbecueDetail: PropsScheduled) => {
@@ -43,14 +44,31 @@ export function BarbecueContextProvider({
     const index = scheduled.findIndex((item) => item.id == idBarbecue);
     const updatedGuestList = [...scheduled];
     if (updatedGuestList[index]) {
-      updatedGuestList[index].price =
-        (+updatedGuestList[index].price + +newGuest.price).toString();
-      updatedGuestList[index].qtPeople = (+updatedGuestList[index].qtPeople + 1).toString();
+      updatedGuestList[index].price = (
+        +updatedGuestList[index].price + +newGuest.price
+      ).toString();
+
+      updatedGuestList[index].price = newGuest.suggestedValueBeer
+        ? (
+            +updatedGuestList[index].suggestedValueBeer +
+            +updatedGuestList[index].price
+          ).toString()
+        : updatedGuestList[index].price;
+
+      updatedGuestList[index].qtPeople = (
+        +updatedGuestList[index].qtPeople + 1
+      ).toString();
+
+      newGuest.price = newGuest.suggestedValueBeer
+        ? (
+            +updatedGuestList[index].suggestedValueBeer + +newGuest.price
+          ).toString()
+        : newGuest.price;
+
       updatedGuestList[index].guests.push(newGuest);
     }
     setScheduled(updatedGuestList);
     setBarbecueDetail(updatedGuestList[index]);
-
   };
 
   const markGuestAsPayed = (eventIndex: number, guestIndex: number) => {

@@ -6,7 +6,6 @@
   font-size: 22px;
 }
 
-/* Esconder o checkbox padrão */
 .checkBoxNone {
   position: absolute;
   opacity: 0;
@@ -15,7 +14,6 @@
   width: 0;
 }
 
-/* Criar o checkbox customizado */
 .checkmark {
   position: absolute;
   top: 0;
@@ -27,12 +25,10 @@
   border: 3px solid #998220;
 }
 
-/* Adicionar uma cor de fundo cinza ao passar o mouse */
 .container:hover input ~ .checkmark {
   background-color: #ffd8364a;
 }
 
-/* Quando o checkbox é clicado, adicionar um fundo rosa */
 .container input:checked ~ .checkmark {
   background-color: #FFD836;
 }

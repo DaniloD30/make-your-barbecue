@@ -14,6 +14,7 @@ const schema = z.object({
   name: z.string().min(1, { message: "Required" }),
   payed: z.boolean(),
   price: z.string().min(1, { message: "Required" }),
+  suggestedValueBeer: z.boolean(),
 });
 
 type FormDataProps = z.infer<typeof schema>;
@@ -35,6 +36,7 @@ export default function FormAddGuest() {
       name: "",
       payed: false,
       price: "",
+      suggestedValueBeer: false,
     },
   });
 
@@ -87,8 +89,16 @@ export default function FormAddGuest() {
             {errors.price && <ErrorField errorMessage={errors.price.message} />}
           </div>
           <div>
-            <p>Valor sugerido com bebida R${suggestValue()}</p>
-            <p>Valor sugerido sem bebida R${suggestValue()}</p>
+            <div className={styles.inputLoginAndPass}>
+              <label>
+                Adicionar valor sugerido da bebida?{" "}
+                {`R$ ${barbecueDetail?.suggestedValueBeer}`}
+              </label>
+              <input
+                {...register("suggestedValueBeer")}
+                type="checkbox"
+              />
+            </div>
           </div>
           <div className={styles.containerButton}>
             <button

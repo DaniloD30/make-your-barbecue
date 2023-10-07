@@ -7,7 +7,6 @@ import { useEffect } from "react";
 import { useBarbecue } from "@/contexts/BarbecueContext";
 import { useModal } from "@/contexts/ModalContext";
 import Modal from "@/components/barbecueSchedule/Modal";
-import FormAddBarbecue from "@/components/barbecueSchedule/FormAddBarbecue";
 import FormAddGuest from "@/components/details/FormAddGuest";
 
 export default function Details() {

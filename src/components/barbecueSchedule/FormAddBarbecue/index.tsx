@@ -2,7 +2,6 @@ import styles from "./FormAddBarbecue.module.css";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { PropsScheduled } from "@/interfaces/barbecue";
 import ErrorField from "@/components/ErrorField";
 import { useBarbecue } from "@/contexts/BarbecueContext";
 import uuid from "react-uuid";
@@ -25,6 +24,7 @@ const schema = z.object({
       price: z.string(),
     })
   ),
+  suggestedValueBeer: z.string().min(1, { message: "Required" }),
 });
 
 interface Props {
@@ -38,6 +38,7 @@ export default function FormAddBarbecue({ toggle }: Props) {
   const {
     handleSubmit,
     register,
+    
     formState: { errors },
   } = useForm<FormDataProps>({
     mode: "all",
@@ -48,6 +49,7 @@ export default function FormAddBarbecue({ toggle }: Props) {
       date: new Date(),
       title: "",
       qtPeople: "0",
+      suggestedValueBeer: "",
       price: "0",
       guests: [],
     },
@@ -62,8 +64,7 @@ export default function FormAddBarbecue({ toggle }: Props) {
     return (
       Boolean(errors.date) ||
       Boolean(errors.title) ||
-      Boolean(errors.qtPeople) ||
-      Boolean(errors.price)
+      Boolean(errors.suggestedValueBeer)
     );
   };
 
@@ -94,6 +95,18 @@ export default function FormAddBarbecue({ toggle }: Props) {
               maxLength={255}
             />
             {errors.title && <ErrorField errorMessage={errors.title.message} />}
+          </div>
+          <div className={styles.inputLoginAndPass}>
+            <input
+              {...register("suggestedValueBeer")}
+              placeholder="Valor sugerido para bebida"
+              className={styles.inputStyle}
+              type="number"
+              min="0.00"
+              max="1000000.00"
+              step="0.01"
+            />
+            {errors.suggestedValueBeer && <ErrorField errorMessage={errors.suggestedValueBeer.message} />}
           </div>
           <div className={styles.containerButton}>
             <button

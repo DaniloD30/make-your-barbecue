@@ -4,6 +4,7 @@ export interface PropsScheduled {
   title: string;
   qtPeople: string;
   price: string;
+  suggestedValueBeer: string;
   guests: Guests[];
 }
 
@@ -12,4 +13,5 @@ export interface Guests {
   name: string;
   payed: boolean;
   price: string;
+  suggestedValueBeer: boolean;
 }
