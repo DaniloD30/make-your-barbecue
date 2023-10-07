@@ -1,12 +1,10 @@
 .cardDetail {
   width: 588px;
   min-height: 600px;
-  max-height: 854px;
+  max-height: 700px;
   overflow-y: auto;
   border-radius: 2px;
   background: #fff;
-  position: absolute;
-  margin-top: 80vh;
   box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.06);
 }
 
