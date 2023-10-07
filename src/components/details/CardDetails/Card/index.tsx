@@ -14,11 +14,13 @@ export default function CardDetails() {
   const { barbecueDetail, scheduled } = useBarbecue();
   const { toggle } = useModal();
   const router = useRouter();
-  /*
-  TODO: Agenda de churras é um componente, pq se repete na login
-  TODO: Title max width e ellips
-  */
 
+  const barbecueArrayIndex = () => {
+    if (barbecueDetail && scheduled) {
+      return scheduled.findIndex((item) => item.id === barbecueDetail?.id);
+    }
+    return 0;
+  };
   return (
     <>
       <div className={styles.cardDetail}>
@@ -37,25 +39,15 @@ export default function CardDetails() {
               barbecueDetail?.date ? barbecueDetail.date : new Date()
             )}
           </div>
-          <div
-            style={{
-              display: "flex",
-              marginRight: "63px",
-            }}
-          >
+          <div className={styles.containerIcon}>
             <Image src={IconPeople} alt="icon-people" />
             <div className={styles.textsIcons}>{barbecueDetail?.qtPeople}</div>
           </div>
         </div>
         <div className={styles.rowDetail}>
           <div className={styles.customTextTitle}>{barbecueDetail?.title}</div>
-          <div
-            style={{
-              display: "flex",
-              marginRight: "20px",
-            }}
-          >
-            <Image src={IconMoney} alt="icon-people" />
+          <div className={styles.containerIconMoney}>
+            <Image src={IconMoney} alt="icon-money" />
             <div className={styles.textsIcons}>R${barbecueDetail?.price}</div>
           </div>
         </div>
@@ -65,19 +57,16 @@ export default function CardDetails() {
             Adicionar participante do churras!
           </button>
         </div>
-        <div
-          style={{ marginTop: "20px", marginLeft: "20px", marginRight: "20px" }}
-        >
-          {scheduled?.map((item, indexBarbecue) =>
-            item.guests.map((itemGuest, indexGuest) => (
+        <div className={styles.rowDetailContainer}>
+          {barbecueDetail &&
+            barbecueDetail.guests.map((itemGuest, indexGuest) => (
               <RowDetail
                 key={itemGuest.id}
                 guest={itemGuest}
-                indexBarbecue={indexBarbecue}
+                indexBarbecue={barbecueArrayIndex()}
                 indexGuest={indexGuest}
               />
-            ))
-          )}
+            ))}
         </div>
       </div>
     </>

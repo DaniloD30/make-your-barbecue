@@ -41,11 +41,11 @@ export default function Card({
         </div>
 
         <div className={styles.containerIcons}>
-          <div style={{ display: "flex", alignItems: "center" }}>
+          <div className={styles.alignDiv}>
             <Image src={IconPeople} alt="icon-people" />
             <div className={styles.textsIcons}>{qtPeople}</div>
           </div>
-          <div style={{ display: "flex", alignItems: "center" }}>
+          <div  className={styles.alignDiv}>
             <Image src={IconMoney} alt="icon-people" />
             <div className={styles.textsIcons}>R${price}</div>
           </div>

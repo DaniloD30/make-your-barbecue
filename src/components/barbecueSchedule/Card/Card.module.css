@@ -17,6 +17,10 @@
   margin-left: 12%;
 }
 
+.alignDiv {
+  display: flex;
+  align-items: center;
+}
 .date {
   color: #000;
   font-family: Raleway;

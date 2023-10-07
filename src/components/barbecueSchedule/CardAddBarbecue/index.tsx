@@ -13,23 +13,10 @@ export default function CardAddBarbecue({ openModal }: Props) {
           <div>
             <Image src={Ellipse} alt="ellipse" />
           </div>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              position: "absolute",
-            }}
-          >
+          <div className={styles.containerIconImage}>
             <Image src={Icon} alt="icon" />
           </div>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              position: "absolute",
-              marginTop: "50%",
-            }}
-          >
+          <div className={styles.containerText}>
             <h2 className={styles.textCard}>Adicionar Churras</h2>
           </div>
         </div>

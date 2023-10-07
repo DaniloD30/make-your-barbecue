@@ -24,11 +24,12 @@ export function BarbecueContextProvider({
   barbecueInitialValue,
   sheduledInitialValue,
 }: BarbecueContextProviderProps) {
+  
   const [barbecueDetail, setBarbecueDetail] =
     useState<PropsScheduled>(barbecueInitialValue);
   const [scheduled, setScheduled] =
     useState<PropsScheduled[]>(sheduledInitialValue);
-    
+
   const router = useRouter();
 
   const openCardDetail = (objBarbecueDetail: PropsScheduled) => {
@@ -40,29 +41,34 @@ export function BarbecueContextProvider({
     setScheduled((prevState) => [...prevState, data]);
   };
 
+  const handleSum = (value: string, value2: string) => {
+    return (+value + +value2).toString();
+  };
+
   const addGuestToEvent = (idBarbecue: string, newGuest: Guests) => {
     const index = scheduled.findIndex((item) => item.id == idBarbecue);
     const updatedGuestList = [...scheduled];
     if (updatedGuestList[index]) {
-      updatedGuestList[index].price = (
-        +updatedGuestList[index].price + +newGuest.price
-      ).toString();
-
+      // Soma o preço do convidado com o preço total
+      updatedGuestList[index].price = handleSum(
+        updatedGuestList[index].price,
+        newGuest.price
+      );
+      // Soma o preço total com o preço sugerido com bebida
       updatedGuestList[index].price = newGuest.suggestedValueBeer
-        ? (
-            +updatedGuestList[index].suggestedValueBeer +
-            +updatedGuestList[index].price
-          ).toString()
+        ? handleSum(
+            updatedGuestList[index].suggestedValueBeer,
+            updatedGuestList[index].price
+          )
         : updatedGuestList[index].price;
-
+      // Aumenta em 1 a quantidade de pessoas, ao adicionar um convidado
       updatedGuestList[index].qtPeople = (
         +updatedGuestList[index].qtPeople + 1
       ).toString();
-
+      // Soma o valor que o convidado vai contribuir mais o valor sugerido,
+      // caso ele tenha marcado sem bebida, vai o valor sem bebida
       newGuest.price = newGuest.suggestedValueBeer
-        ? (
-            +updatedGuestList[index].suggestedValueBeer + +newGuest.price
-          ).toString()
+        ? handleSum(updatedGuestList[index].suggestedValueBeer, newGuest.price)
         : newGuest.price;
 
       updatedGuestList[index].guests.push(newGuest);
