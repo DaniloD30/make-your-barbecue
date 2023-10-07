@@ -1,14 +1,18 @@
-import LoginForm from "@/components/login/LoginForm";
+// import LoginForm from "@/components/login/LoginForm";
 import styles from "./LoginLayout.module.css";
 import Image from "next/image";
+import { ReactNode } from "react";
 
-export default function LoginLayout() {
+interface Props {
+  children: ReactNode;
+}
+  const LoginLayout =({ children }: Props) => {
   return (
     <>
       <div className={styles.containerLogin}>
         <div className={styles.contentLogin}>
           <div className={styles.title}>Agenda de Churras</div>
-          <LoginForm />
+          {children}
           <div className={styles.footerLogin}>
             <Image
               src="/images/trinca.svg"
@@ -23,3 +27,4 @@ export default function LoginLayout() {
     </>
   );
 }
+export { LoginLayout };

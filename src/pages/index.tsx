@@ -1,5 +1,12 @@
-import LoginLayout from "@/components/Layouts/Login";
+import { LoginLayout } from "@/Layouts/Login";
+import LoginForm from "@/components/login/LoginForm";
 
-export default function Login() {
-  return <LoginLayout />;
-}
+const Login = () => {
+  return (
+    <LoginLayout>
+      <LoginForm />
+    </LoginLayout>
+  );
+};
+
+export default Login;

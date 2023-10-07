@@ -28,15 +28,7 @@
   margin-top: 9.52rem;
   z-index: 2;
 }
-.card {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-  flex-wrap: wrap;
-  max-height: 640px;
-  min-height: 300px;
-  overflow-y: auto;
-}
+
 .title {
   display: flex;
   justify-content: center;
