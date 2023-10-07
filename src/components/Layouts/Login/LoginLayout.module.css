@@ -1,0 +1,43 @@
+.containerLogin {
+  display: flex;
+  position: relative;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-color: #ffd836;
+  background-image: url("/images/bbq_pattern.svg");
+  background-repeat: repeat-x;
+  background-position: center top;
+
+  overflow: hidden;
+}
+
+.contentLogin {
+  margin: auto;
+  margin-top: 6.38rem;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 4.38rem;
+  color: #000;
+  font-family: Raleway;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
+
+.footerLogin {
+  display: flex;
+  justify-content: center;
+
+  position: absolute;
+  bottom: 1.75rem;
+  left: 0;
+  right: 0;
+}

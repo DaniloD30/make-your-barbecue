@@ -2,7 +2,6 @@ import styles from "./FormAddGuest.module.css";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { PropsScheduled } from "@/interfaces/barbecue";
 import ErrorField from "@/components/ErrorField";
 import { useBarbecue } from "@/contexts/BarbecueContext";
 import uuid from "react-uuid";
@@ -51,14 +50,6 @@ export default function FormAddGuest() {
     );
   };
 
-  const suggestValue = () => {
-    if (barbecueDetail && barbecueDetail) {
-      if (barbecueDetail.price && barbecueDetail.qtPeople) {
-        return +barbecueDetail.price / +barbecueDetail.qtPeople;
-      }
-    }
-  };
-
   return (
     <>
       <div>
@@ -94,10 +85,7 @@ export default function FormAddGuest() {
                 Adicionar valor sugerido da bebida?{" "}
                 {`R$ ${barbecueDetail?.suggestedValueBeer}`}
               </label>
-              <input
-                {...register("suggestedValueBeer")}
-                type="checkbox"
-              />
+              <input {...register("suggestedValueBeer")} type="checkbox" />
             </div>
           </div>
           <div className={styles.containerButton}>
