@@ -1,0 +1,66 @@
+.cardContainer {
+  height: 192px;
+  width: 282px;
+  border-radius: 2px;
+  background: #fff;
+  box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.06);
+  border: none;
+  text-align: unset;
+  cursor: pointer;
+}
+.cardContainer:hover {
+  background-color: rgba(128, 128, 128, 0.3);
+  color: black;
+}
+.containerTitlesCards {
+  margin-top: 2%;
+  margin-left: 12%;
+}
+
+.alignDiv {
+  display: flex;
+  align-items: center;
+}
+.date {
+  color: #000;
+  font-family: Raleway;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.titleCard {
+  color: rgba(0, 0, 0, 0.8);
+  font-family: Raleway;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  white-space: nowrap; 
+  width: 150px; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+
+.containerIcons {
+  display: flex;
+  justify-content: space-around;
+  height: 50%;
+  align-items: flex-end;
+}
+
+.textsIcons {
+  color: #000;
+  text-align: center;
+  font-family: Raleway;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-left: 10px;
+  white-space: nowrap; 
+  max-width: 125px; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
