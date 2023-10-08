@@ -19,13 +19,16 @@
   display: flex;
   margin-right: 63px;
 }
+
 .rowDetailContainer {
   margin: 20px 20px 0px 20px;
 }
+
 .containerIconMoney {
   display: flex;
-  margin-right: 20px;
+  margin-right: 38px;
 }
+
 .comeBack {
   display: flex;
   justify-content: space-between;
@@ -42,19 +45,18 @@
 }
 
 .buttonAdd {
-  width: 200px;
+  width: 250px;
   height: 40px;
-  flex-shrink: 0;
-  border-radius: 10px;
-  background: #fff;  
   color: #000;
+  background: #fff;
+  text-align: center;
   font-family: Raleway;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
   cursor: pointer;
-  border: 1px solid #000;
+  border: 1px solid #fff;
   transition: background-color 0.3s, color 0.3s;
 
   display: flex;
@@ -65,17 +67,16 @@
 .buttonComeBack {
   width: 100px;
   height: 40px;
-  flex-shrink: 0;
-  border-radius: 10px;
-  background: #fff;  
   color: #000;
+  background: #fff;
+  text-align: center;
   font-family: Raleway;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
   cursor: pointer;
-  border: 1px solid #000;
+  border: 1px solid #fff;
   transition: background-color 0.3s, color 0.3s;
 
   display: flex;
@@ -87,6 +88,7 @@
   background-color: rgba(128, 128, 128, 0.3);
   color: black;
 }
+
 .buttonComeBack:hover {
   background-color: rgba(128, 128, 128, 0.3);
   color: black;

@@ -1,0 +1,20 @@
+.containerButton {
+  display: flex;
+  position: absolute;
+  top: 0;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+.textButton {
+  color: #000;
+  text-align: center;
+  font-family: Raleway;
+  font-size: 17px;
+  font-Style: normal;
+  font-Weight: 700;
+  line-Height: normal;
+}

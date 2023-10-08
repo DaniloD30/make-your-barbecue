@@ -6,7 +6,6 @@ import ErrorField from "@/components/ErrorField";
 import { useBarbecue } from "@/contexts/BarbecueContext";
 import uuid from "react-uuid";
 import { useModal } from "@/contexts/ModalContext";
-import { useEffect } from "react";
 
 const schema = z.object({
   id: z.string(),

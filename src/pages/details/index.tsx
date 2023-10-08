@@ -11,6 +11,7 @@ export default function Details() {
   const { barbecueDetail } = useBarbecue();
   const router = useRouter();
   const { toggle, isOpen } = useModal();
+  
   useEffect(() => {
     if (barbecueDetail?.title === "") {
       router.push("/barbecue-schedule");

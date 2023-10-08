@@ -1,5 +1,4 @@
 export const formatDate = (date: Date) => {
-  //let or using?
   let day = date.getDate();
   let month = date.getMonth();
   if (day < 10 && month + 1 < 10) {

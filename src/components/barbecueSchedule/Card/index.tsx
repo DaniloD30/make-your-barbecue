@@ -16,9 +16,7 @@ export default function Card({
   guests,
 }: PropsScheduled) {
   const { openCardDetail } = useBarbecue();
-  /*
-  TODO: Agenda de churras é um componente, pq se repete na login LAYOUT
-  */
+ 
   return (
     <>
       <button
