@@ -1,0 +1,46 @@
+.container {
+  height: 192px;
+  width: 282px;
+  border-radius: 2px;
+  background: #f1f1f1;
+  border: none;
+  cursor: pointer;
+}
+
+.container:hover {
+  background-color: rgba(128, 128, 128, 0.3);
+  color: black;
+}
+.containerIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.containerIconImage{
+  display: flex;
+  justify-content: center;
+  position: absolute;
+}
+
+.containerText{
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  margin-top: 50%;
+}
+
+
+.textCard {
+  color: #000;
+  text-align: center;
+  font-family: Raleway;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.buttonClose {
+}
