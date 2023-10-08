@@ -1,8 +1,7 @@
 import styles from "./Logout.module.css";
 import Image from "next/image";
+import { useLogin } from "../../contexts/LoginContext";
 import { useRouter } from "next/router";
-import { useLogin } from "@/contexts/LoginContext";
-import IconLogout from "../../assets/icons8-logout-48.png";
 
 const LogoutButton = () => {
   const { handleSetUser } = useLogin();
@@ -15,8 +14,17 @@ const LogoutButton = () => {
 
   return (
     <>
-      <div onClick={() => logout()} className={styles.containerButton}>
-        <Image src={IconLogout} alt="logout-icon" />
+      <div
+        data-testid="button-logout"
+        onClick={() => logout()}
+        className={styles.containerButton}
+      >
+        <Image
+          src={"/images/icon-logout.png"}
+          width={24}
+          height={24}
+          alt="logout-icon"
+        />
         <div className={styles.textButton}>Sair</div>
       </div>
     </>
