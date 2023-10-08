@@ -1,8 +1,8 @@
 import { BarbecueLayout } from "@/Layouts/Barbecue";
-import Card from "@/components/barbecueSchedule/Card";
-import CardAddBarbecue from "@/components/barbecueSchedule/CardAddBarbecue";
-import FormAddBarbecue from "@/components/barbecueSchedule/FormAddBarbecue";
-import Modal from "@/components/barbecueSchedule/Modal";
+import Card from "@/components/BarbecueSchedule/Card";
+import CardAddBarbecue from "@/components/BarbecueSchedule/CardAddBarbecue";
+import FormAddBarbecue from "@/components/BarbecueSchedule/FormAddBarbecue";
+import Modal from "@/components/BarbecueSchedule/Modal";
 import styles from "./BarbecueSchedule.module.css";
 import { useBarbecue } from "@/contexts/BarbecueContext";
 import { useModal } from "@/contexts/ModalContext";

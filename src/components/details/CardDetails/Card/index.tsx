@@ -16,14 +16,6 @@ export default function CardDetails() {
   const { toggle } = useModal();
   const router = useRouter();
 
-  // const barbecueArrayIndex = () => {
-  //   if (barbecueDetail && scheduled) {
-  //     return scheduled.findIndex((item) => item.id === barbecueDetail?.id);
-  //   }
-  //   return 0;
-  // };
-
-  //FUNÇÃO QUE DEPENDE DE ESTADO UTILIZA O USECALLBACK
   const barbecueArrayIndex = useCallback(() => {
     if (barbecueDetail && scheduled) {
       return scheduled.findIndex((item) => item.id === barbecueDetail?.id);

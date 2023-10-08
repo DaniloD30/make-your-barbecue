@@ -7,8 +7,8 @@ import ErrorField from "@/components/ErrorField";
 import { useLogin } from "@/contexts/LoginContext";
 
 const schema = z.object({
-  email: z.string().email("Invalid e-mail"),
-  pass: z.string().min(8, "At least 8 characters"),
+  email: z.string().email("E-mail invalido"),
+  pass: z.string().min(8, "A senha deve possuir mais de 8 caracteres"),
 });
 type FormDataProps = z.infer<typeof schema>;
 

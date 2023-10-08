@@ -9,9 +9,9 @@ import { useModal } from "@/contexts/ModalContext";
 
 const schema = z.object({
   id: z.string(),
-  name: z.string().min(1, { message: "Required" }),
+  name: z.string().min(1, { message: "Obrigatório" }),
   payed: z.boolean(),
-  price: z.string().min(1, { message: "Required" }),
+  price: z.string().min(1, { message: "Obrigatório" }),
   suggestedValueBeer: z.boolean(),
 });
 

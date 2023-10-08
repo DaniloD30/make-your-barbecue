@@ -10,12 +10,12 @@ const schema = z.object({
   date: z.coerce
     .date()
     .min(new Date(), {
-      message: "Date cannot go past",
+      message: "A data não pode ser no passado",
     })
     .max(new Date(2023, 12, 31)),
-  title: z.string().min(1, { message: "Required" }),
-  qtPeople: z.string().min(1, { message: "Required" }),
-  price: z.string().min(1, { message: "Required" }),
+  title: z.string().min(1, { message: "Obrigatório" }),
+  qtPeople: z.string().min(1, { message: "Obrigatório" }),
+  price: z.string().min(1, { message: "Obrigatório" }),
   guests: z.array(
     z.object({
       id: z.string(),
@@ -25,7 +25,7 @@ const schema = z.object({
       suggestedValueBeer: z.boolean(),
     })
   ),
-  suggestedValueBeer: z.string().min(1, { message: "Required" }),
+  suggestedValueBeer: z.string().min(1, { message: "Obrigatório" }),
 });
 
 interface Props {
