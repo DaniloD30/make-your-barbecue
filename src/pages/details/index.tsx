@@ -1,11 +1,11 @@
-import CardDetails from "@/components/Details/CardDetails/Card";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import { useBarbecue } from "@/contexts/BarbecueContext";
-import { useModal } from "@/contexts/ModalContext";
-import Modal from "@/components/BarbecueSchedule/Modal";
-import FormAddGuest from "@/components/Details/FormAddGuest";
-import { BarbecueLayout } from "@/Layouts/Barbecue";
+import { useBarbecue } from "../../contexts/BarbecueContext";
+import { useModal } from "../../contexts/ModalContext";
+import Modal from "../../components/BarbecueSchedule/Modal";
+import FormAddGuest from "../../components/Details/FormAddGuest";
+import { BarbecueLayout } from "../../Layouts/Barbecue";
+import CardDetails from "../../components/Details/CardDetails/Card";
 
 export default function Details() {
   const { barbecueDetail } = useBarbecue();

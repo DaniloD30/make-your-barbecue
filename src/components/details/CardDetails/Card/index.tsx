@@ -5,9 +5,9 @@ import IconAdd from "../../../../assets/icons8-add-24.png";
 import IconMoney from "../../../../assets/icon_money.svg";
 import styles from "./CardDetails.module.css";
 import RowDetail from "../../RowDetail";
-import { useBarbecue } from "@/contexts/BarbecueContext";
-import { formatDate } from "@/utils";
-import { useModal } from "@/contexts/ModalContext";
+import { useBarbecue } from "../../../../contexts/BarbecueContext";
+import { formatDate } from "../../../../utils";
+import { useModal } from "../../../../contexts/ModalContext";
 import { useRouter } from "next/router";
 import { useCallback } from "react";
 

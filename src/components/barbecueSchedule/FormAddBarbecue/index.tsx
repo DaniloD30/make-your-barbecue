@@ -2,8 +2,8 @@ import styles from "./FormAddBarbecue.module.css";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import ErrorField from "@/components/ErrorField";
-import { useBarbecue } from "@/contexts/BarbecueContext";
+import ErrorField from "../../../components/ErrorField";
+import { useBarbecue } from "../../../contexts/BarbecueContext";
 import uuid from "react-uuid";
 const schema = z.object({
   id: z.string(),

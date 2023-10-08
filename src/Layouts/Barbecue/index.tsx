@@ -1,7 +1,7 @@
 import styles from "./BarbecueLayout.module.css";
 import Image from "next/image";
 import { ReactNode } from "react";
-import { LogoutButton } from "@/components/LogoutButton";
+import { LogoutButton } from "../../components/LogoutButton";
 interface Props {
   children: ReactNode;
 }

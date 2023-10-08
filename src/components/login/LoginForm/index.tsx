@@ -3,8 +3,8 @@ import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/router";
-import ErrorField from "@/components/ErrorField";
-import { useLogin } from "@/contexts/LoginContext";
+import ErrorField from "../../../components/ErrorField";
+import { useLogin } from "../../../contexts/LoginContext";
 
 const schema = z.object({
   email: z.string().email("E-mail invalido"),

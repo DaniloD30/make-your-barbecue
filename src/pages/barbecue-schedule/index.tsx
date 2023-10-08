@@ -1,12 +1,12 @@
-import { BarbecueLayout } from "@/Layouts/Barbecue";
-import Card from "@/components/BarbecueSchedule/Card";
-import CardAddBarbecue from "@/components/BarbecueSchedule/CardAddBarbecue";
-import FormAddBarbecue from "@/components/BarbecueSchedule/FormAddBarbecue";
-import Modal from "@/components/BarbecueSchedule/Modal";
+import { useLogin } from "../../contexts/LoginContext";
+import { BarbecueLayout } from "../../Layouts/Barbecue";
+import Card from "../../components/BarbecueSchedule/Card";
+import CardAddBarbecue from "../../components/BarbecueSchedule/CardAddBarbecue";
+import FormAddBarbecue from "../../components/BarbecueSchedule/FormAddBarbecue";
+import Modal from "../../components/BarbecueSchedule/Modal";
 import styles from "./BarbecueSchedule.module.css";
-import { useBarbecue } from "@/contexts/BarbecueContext";
-import { useModal } from "@/contexts/ModalContext";
-import { useLogin } from "@/contexts/LoginContext";
+import { useBarbecue } from "../../contexts/BarbecueContext";
+import { useModal } from "../../contexts/ModalContext";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 

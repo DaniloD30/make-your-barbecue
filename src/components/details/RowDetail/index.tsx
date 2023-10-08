@@ -1,6 +1,6 @@
-import { Guests } from "@/interfaces/Barbecue";
+import { Guests } from "../../../interfaces/Barbecue";
 import styles from "./RowDetail.module.css";
-import { useBarbecue } from "@/contexts/BarbecueContext";
+import { useBarbecue } from "../../../contexts/BarbecueContext";
 import BeerIcon from "../../../assets/icons8-beer-24.png";
 import Image from "next/image";
 

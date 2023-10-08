@@ -1,4 +1,4 @@
-import { User } from "@/interfaces/LoginInterface";
+import { User } from "../interfaces/LoginInterface";
 import { createContext, ReactNode, useContext, useState } from "react";
 
 interface LoginContextData {
