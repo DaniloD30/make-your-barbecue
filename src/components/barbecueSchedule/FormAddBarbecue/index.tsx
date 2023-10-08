@@ -92,7 +92,7 @@ export default function FormAddBarbecue({ toggle }: Props) {
               {...register("title")}
               type="text"
               className={styles.inputStyle}
-              placeholder="Name"
+              placeholder="Nome do churras"
               maxLength={255}
             />
             {errors.title && <ErrorField errorMessage={errors.title.message} />}
@@ -115,7 +115,7 @@ export default function FormAddBarbecue({ toggle }: Props) {
               type="submit"
               className={styles.buttonLogin}
             >
-              Add
+              Criar evento
             </button>
           </div>
         </form>

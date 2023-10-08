@@ -61,7 +61,7 @@ export default function FormAddGuest() {
               {...register("name")}
               type="text"
               className={styles.inputStyle}
-              placeholder="Name"
+              placeholder="Nome do convidado"
               maxLength={255}
             />
             {errors.name && <ErrorField errorMessage={errors.name.message} />}
@@ -69,7 +69,7 @@ export default function FormAddGuest() {
           <div className={styles.inputLoginAndPass}>
             <input
               {...register("price")}
-              placeholder="Price"
+              placeholder="Valor"
               className={styles.inputStyle}
               type="number"
               min="0.00"
@@ -93,7 +93,7 @@ export default function FormAddGuest() {
               type="submit"
               className={styles.buttonLogin}
             >
-              Add
+              Adicionar
             </button>
           </div>
         </form>

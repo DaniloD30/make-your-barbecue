@@ -51,7 +51,7 @@ export default function LoginForm() {
             {errors.email && <ErrorField errorMessage={errors.email.message} />}
           </div>
           <div className={styles.inputLoginAndPass}>
-            <label className={styles.labelInput}>Password</label>
+            <label className={styles.labelInput}>Senha</label>
             <input
               {...register("pass")}
               type="password"
