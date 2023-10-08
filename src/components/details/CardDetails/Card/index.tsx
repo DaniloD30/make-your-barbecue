@@ -9,18 +9,28 @@ import { useBarbecue } from "@/contexts/BarbecueContext";
 import { formatDate } from "@/utils";
 import { useModal } from "@/contexts/ModalContext";
 import { useRouter } from "next/router";
+import { useCallback } from "react";
 
 export default function CardDetails() {
   const { barbecueDetail, scheduled } = useBarbecue();
   const { toggle } = useModal();
   const router = useRouter();
 
-  const barbecueArrayIndex = () => {
+  // const barbecueArrayIndex = () => {
+  //   if (barbecueDetail && scheduled) {
+  //     return scheduled.findIndex((item) => item.id === barbecueDetail?.id);
+  //   }
+  //   return 0;
+  // };
+
+  //FUNÇÃO QUE DEPENDE DE ESTADO UTILIZA O USECALLBACK
+  const barbecueArrayIndex = useCallback(() => {
     if (barbecueDetail && scheduled) {
       return scheduled.findIndex((item) => item.id === barbecueDetail?.id);
     }
     return 0;
-  };
+  }, [barbecueDetail, scheduled]);
+
   return (
     <>
       <div className={styles.cardDetail}>

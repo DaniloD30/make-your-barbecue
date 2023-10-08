@@ -1,4 +1,10 @@
-import { createContext, ReactNode, useContext, useState } from "react";
+import {
+  createContext,
+  ReactNode,
+  useCallback,
+  useContext,
+  useState,
+} from "react";
 
 interface ModalContextData {
   toggle: () => void;
@@ -17,9 +23,11 @@ export function ModalContextProvider({
   modalInitialValue,
 }: ModalContextProviderProps) {
   const [isOpen, setisOpen] = useState(modalInitialValue);
-  const toggle = () => {
+
+  const toggle = useCallback(() => {
     setisOpen(!isOpen);
-  };
+  }, [isOpen]);
+
   return (
     <ModalContext.Provider
       value={{

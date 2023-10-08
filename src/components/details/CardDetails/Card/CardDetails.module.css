@@ -1,6 +1,6 @@
 .cardDetail {
   width: 588px;
-  min-height: 600px;
+  min-height: 250px;
   max-height: 700px;
   overflow-y: auto;
   border-radius: 2px;
