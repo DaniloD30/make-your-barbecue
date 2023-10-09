@@ -2,7 +2,6 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import Contexts from "../../../contexts";
 import LoginForm from "./index";
 import { act } from "@testing-library/react";
-
 jest.mock("next/router", () => ({
   useRouter() {
     return {
@@ -37,7 +36,7 @@ const initialValueBarbecue = {
 };
 
 describe("Render LoginForm", () => {
-  it("Render LoginFormw", () => {
+  it("Render LoginForm", () => {
     render(
       <Contexts
         initialValueLogin={initialValueLogin}
@@ -56,11 +55,9 @@ describe("Render LoginForm", () => {
     });
 
     act(() => {
-   
       fireEvent.click(button);
       fireEvent.change(email, { target: { value: "dadad@hotmail.com" } });
       fireEvent.change(pass, { target: { value: "23456789" } });
     });
   });
-
 });
