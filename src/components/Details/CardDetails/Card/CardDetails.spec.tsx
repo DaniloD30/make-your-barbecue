@@ -101,7 +101,6 @@ describe("Render CardDetails", () => {
         <CardDetails />
       </Contexts>
     );
-      screen.logTestingPlaygroundURL()
     const nameGuest = screen.getByText(/value barbecue/i)
     expect(nameGuest).toBeInTheDocument();
   });

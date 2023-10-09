@@ -1,7 +1,6 @@
 import { Guests } from "../../../interfaces/Barbecue";
 import styles from "./RowDetail.module.css";
 import { useBarbecue } from "../../../contexts/BarbecueContext";
-import BeerIcon from "../../../assets/icons8-beer-24.png";
 import Image from "next/image";
 
 interface Props {
@@ -31,7 +30,12 @@ export default function RowDetail({ guest, indexGuest, indexBarbecue }: Props) {
           <div className={styles.guestPrice}>
             {guest.payed ? <s>R$ {guest.price}</s> : `R$ ${guest.price}`}
             {guest.suggestedValueBeer ? (
-              <Image src={BeerIcon} alt="icon-beer" />
+              <Image
+              src={"/images/icon-beer.png"}
+              width={24}
+              height={24}
+              alt="icon-beer"
+            />
             ) : null}
           </div>
         </div>
