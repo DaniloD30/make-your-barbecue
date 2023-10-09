@@ -58,16 +58,6 @@ describe("Render FormAddBarbecue", () => {
       fireEvent.change(titleInput, { target: { value: "churras" } });
       fireEvent.change(inputValue, { target: { value: "30" } });
     });
-    // const email = screen.getByRole("textbox");
-    // const pass = screen.getByPlaceholderText(/senha/i);
-    // const button = screen.getByRole("button", {
-    //   name: /entrar/i,
-    // });
-
-    // act(() => {
-    //   fireEvent.click(button);
-    //   fireEvent.change(email, { target: { value: "dadad@hotmail.com" } });
-    //   fireEvent.change(pass, { target: { value: "23456789" } });
-    // });
+ 
   });
 });
