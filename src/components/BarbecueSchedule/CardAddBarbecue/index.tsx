@@ -9,7 +9,6 @@ export default function CardAddBarbecue({ openModal }: Props) {
       <button className={styles.container} onClick={openModal}>
         <div className={styles.containerIcon}>
           <div>
-            {/* <Image src={Ellipse} alt="ellipse" /> */}
             <Image
               src={"/images/ellipse.png"}
               width={90}
@@ -18,7 +17,6 @@ export default function CardAddBarbecue({ openModal }: Props) {
             />
           </div>
           <div className={styles.containerIconImage}>
-            {/* <Image src={Icon} alt="icon-bbq" /> */}
             <Image
               src={"/images/icon-bbq.png"}
               width={40}
