@@ -23,4 +23,4 @@
 ## Deploy
 
 Link para visistar a aplicação:
-- [Make your barbecue!](make-your-barbecue.vercel.app) 
+- [Make your barbecue!](https://make-your-barbecue.vercel.app/) 
