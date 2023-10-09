@@ -27,7 +27,6 @@ export default function CardDetails() {
             className={styles.buttonComeBack}
             onClick={() => router.push("/barbecue-schedule")}
           >
-            {/* <Image src={IconBack} alt="icon-back" /> */}
             <Image
               src={"/images/icon-back.png"}
               width={24}

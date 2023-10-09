@@ -22,12 +22,7 @@ const BarbecueSchedule = () => {
     }
   }, [user, router]);
 
-  /* 
-  TODO:      
-        Testes únitarios
-        Intalação das libs de test       
-  */
-
+ 
   return (
     <>
       <BarbecueLayout>
