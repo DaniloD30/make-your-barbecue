@@ -1,6 +1,4 @@
 import Image from "next/image";
-import IconMoney from "../../../assets/icon_money.svg";
-import IconPeople from "../../../assets/icon_people.svg";
 import styles from "./Card.module.css";
 import { PropsScheduled } from "../../../interfaces/Barbecue";
 import { formatDate } from "../../../utils";
@@ -40,11 +38,21 @@ export default function Card({
 
         <div className={styles.containerIcons}>
           <div className={styles.alignDiv}>
-            <Image src={IconPeople} alt="icon-people" />
+            <Image
+              src={"/images/icon-people.svg"}
+              width={18}
+              height={18}
+              alt="icon-people"
+            />
             <div className={styles.textsIcons}>{qtPeople}</div>
           </div>
           <div  className={styles.alignDiv}>
-            <Image src={IconMoney} alt="icon-people" />
+            <Image
+              src={"/images/icon-money.svg"}
+              width={18}
+              height={18}
+              alt="icon-money"
+            />
             <div className={styles.textsIcons}>R${price}</div>
           </div>
         </div>

@@ -1,8 +1,4 @@
 import Image from "next/image";
-import IconPeople from "../../../../assets/icon_people.svg";
-import IconBack from "../../../../assets/icons8-back-24.png";
-import IconAdd from "../../../../assets/icons8-add-24.png";
-import IconMoney from "../../../../assets/icon_money.svg";
 import styles from "./CardDetails.module.css";
 import RowDetail from "../../RowDetail";
 import { useBarbecue } from "../../../../contexts/BarbecueContext";
@@ -31,7 +27,13 @@ export default function CardDetails() {
             className={styles.buttonComeBack}
             onClick={() => router.push("/barbecue-schedule")}
           >
-            <Image src={IconBack} alt="icon-back" />
+            {/* <Image src={IconBack} alt="icon-back" /> */}
+            <Image
+              src={"/images/icon-back.png"}
+              width={24}
+              height={24}
+              alt="icon-back"
+            />
             Voltar
           </button>
         </div>
@@ -42,20 +44,35 @@ export default function CardDetails() {
             )}
           </div>
           <div className={styles.containerIcon}>
-            <Image src={IconPeople} alt="icon-people" />
+            <Image
+              src={"/images/icon-people.svg"}
+              width={18}
+              height={18}
+              alt="icon-people" 
+            />
             <div className={styles.textsIcons}>{barbecueDetail?.qtPeople}</div>
           </div>
         </div>
         <div className={styles.rowDetail}>
           <div className={styles.customTextTitle}>{barbecueDetail?.title}</div>
           <div className={styles.containerIconMoney}>
-            <Image src={IconMoney} alt="icon-money" />
+            <Image
+              src={"/images/icon-money.svg"}
+              width={18}
+              height={18}
+              alt="icon-money"
+            />
             <div className={styles.textsIcons}>R${barbecueDetail?.price}</div>
           </div>
         </div>
         <div className={styles.rowAddButton}>
           <button className={styles.buttonAdd} onClick={toggle}>
-            <Image src={IconAdd} alt="icon-add" />
+            <Image
+              src={"/images/icon-add.png"}
+              width={18}
+              height={18}
+              alt="icon-add"
+            />
             Adicionar participante do churras!
           </button>
         </div>
